@@ -83,3 +83,15 @@ docker run hello-world
 ```
 
 
+
+
+
+If Docker not in `groups`
+bash
+```
+sudo usermod -aG docker $USER
+newgrp docker
+docker ps
+```
+
+
