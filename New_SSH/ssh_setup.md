@@ -15,9 +15,27 @@ chmod 400 my-key.pem
 ```
 
 4. Through terminal reach that folder where pem file is located and copy this path
-5. When you want to connect your VS code or Cursor to this SSH
+5. When you want to connect your VS code or Cursor to this SSH - Press - `Ctrl/Cmd + Shit + P`
+   Then copy this there with (updated path to .pem file) press `Enter`
 bash
 ```
 ssh -i /path/to/my-key.pem ubuntu@3.135.213.201
+```
+Then it will ask which file to update with new permissions for ssh
+![image](https://github.com/user-attachments/assets/7cdbbc91-7808-4821-aa93-5b0079409d5b)
+Go with `/Users/guneeshvats/.ssh/config`
+and paste this there and save
+bash
+```
+Host my-aws-server
+    HostName 3.135.213.201
+    User ubuntu
+    IdentityFile ~/path/to/my-key.pem
+```
+Then you can open in your IDE using the command - 
+bash
+```
+ssh my-aws-server
+
 ```
 7. Install Miniconda using this command
