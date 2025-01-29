@@ -38,4 +38,48 @@ bash
 ssh my-aws-server
 
 ```
-7. Install Miniconda using this command
+## Before installing anything run these commands
+bash 
+```
+sudo apt update && sudo app upgrade -y
+```
+
+## Install Miniconda 
+Run this 
+bash
+```
+wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh && bash Miniconda3-latest-Linux-x86_64.sh
+```
+
+## Install Docker and Docker-Compose
+bash
+```
+sudo apt install -y docker.io && sudo systemctl enable --now docker
+sudo usermod -aG docker $USER
+sudo systemctl enable --now docker
+docker --version
+docker run hello-world
+```
+For Docker-Compose Now
+bash
+```
+sudo apt install -y docker-compose
+docker-compose --version
+```
+
+### Debugging if the Hello-World Command doesn't run 
+If your username is something other than ubuntu, replace it accordingly:
+bash
+```
+sudo usermod -aG docker ubuntu
+sudo usermod -aG docker $USER
+groups
+```
+after gorups you should see docker there 
+bash
+```
+sudo systemctl restart docker
+docker run hello-world
+```
+
+
