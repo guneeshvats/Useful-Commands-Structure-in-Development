@@ -8,8 +8,14 @@ brew services start postgresql@14
 After starting 
 If the database does not exist then do this :
 
-Now that database is there
+If database and table both are there :
 bash
 ```
-psql -U guneeshvats
+psql -U postgres -d tweet_events
+```
+
+If you want to exit the postgres:
+bash
+```
+\q
 ```
